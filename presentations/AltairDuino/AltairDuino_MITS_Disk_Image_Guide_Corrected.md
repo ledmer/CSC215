@@ -1,4 +1,3 @@
-
 # Guide to Uploading Files to the Altair-Duino with MITS Disk Images
 
 This guide provides step-by-step instructions to create, format, and upload `.DSK` disk images to your Altair-Duino using a specific MITS-compatible naming convention.
@@ -102,3 +101,5 @@ With the disk image created and formatted, you can add files to it using `altair
   - Ensure files were added using MITS-compatible formats (e.g., CP/M format for compatibility).
 - **Repair SD card**:
    - If your SD card is broken, unusable or just want to reset it to default, go to the <a href="https://github.com/ledmer/CSC215/blob/main/presentations/AltairDuino/Configuration_menu.md">Configuration_Menu.md</a>.
+## Links
+<a href= "https://codeberg.org/Jamethiel/csc215/src/branch/main/altair_duino.md">Exploring the Altair Duino?</a>
