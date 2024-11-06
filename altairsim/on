@@ -1,0 +1,11 @@
+-0> set debug on
+%SIM-INFO: Debug output to "on"
+Debug output to "on" at Wed Oct 30 00:05:31 2024
+Altair 8800 (Z80) simulator Open SIMH V4.1-0 Current        git commit id: 10003083
+sim> boot dsk0
+
+Simulation stopped, PC: 05C4D (MOV A,M)
+sim> boot dsk0
+
+Simulation stopped, PC: 05C4F (INX H)
+sim> go
