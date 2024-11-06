@@ -102,5 +102,6 @@ With the disk image created and formatted, you can add files to it using `altair
 - **Repair SD card**:
    - If your SD card is broken, unusable or just want to reset it to default, go to the <a href="https://github.com/ledmer/CSC215/blob/main/presentations/AltairDuino/Configuration_menu.md">Configuration_Menu.md</a>.
 ## Links
-<a href= "https://codeberg.org/Jamethiel/csc215/src/branch/main/altair_duino.md">Exploring the Altair Duino</a> \n
+<a href= "https://codeberg.org/Jamethiel/csc215/src/branch/main/altair_duino.md">Exploring the Altair Duino</a> 
+<br>
 <a href= "https://codeberg.org/Jamethiel/csc215/src/branch/main/altair_duino.md">Using Basic</a>
