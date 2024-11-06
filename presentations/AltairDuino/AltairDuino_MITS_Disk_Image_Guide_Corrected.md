@@ -101,4 +101,4 @@ With the disk image created and formatted, you can add files to it using `altair
 - **Files Not Accessible**:
   - Ensure files were added using MITS-compatible formats (e.g., CP/M format for compatibility).
 - **Repair SD card**:
-   - If your SD card is broken, unusable or just want to reset it to default, go to the Configuration_Menu.md.
+   - If your SD card is broken, unusable or just want to reset it to default, go to the <a href="https://github.com/ledmer/CSC215/blob/main/presentations/AltairDuino/Configuration_menu.md">Configuration_Menu.md</a>.
