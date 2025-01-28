@@ -33,11 +33,11 @@ Bigint Bigint::operator+(Bigint const& obj)
     if (negative == obj.negative){
         result = addition_loop(digitsize1, digitsize2, obj);
     }
-
+    return Bigint(result)
   
 }
 std::string Bigint::addition_loop(int i, int j, Bigint const& obj)
-{
+{   std::string result;
     int carry = 0;
     if (negative == obj.negative) {
         while (i >= 0 || j >= 0 || carry) {
@@ -48,7 +48,8 @@ std::string Bigint::addition_loop(int i, int j, Bigint const& obj)
             result.push_back((sum % 10) + '0');
         }
             std::reverse(result.begin(), result.end());
-            return Bigint((negative ? "-" : "") + result);
+            result = (negative ? "-" : "") + result;
+            return result;
         }
 
     return result;
