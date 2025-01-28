@@ -25,6 +25,7 @@ std::string Bigint::to_string() const
 {
     return (negative ? "-" : "") + digits;
 }
+
 Bigint Bigint::operator+(Bigint const& obj)
 {
     std::string result;
@@ -37,8 +38,8 @@ Bigint Bigint::operator+(Bigint const& obj)
         result = substraction_loop(digitsize1, digitsize2, obj);
     }
     return Bigint(result);
-  
 }
+
 std::string Bigint::substraction_loop(int i, int j, Bigint const& obj)
 {
     std::string result;
@@ -75,6 +76,7 @@ std::string Bigint::substraction_loop(int i, int j, Bigint const& obj)
     }
     return result;
 }
+
 std::string Bigint::addition_loop(int i, int j, Bigint const& obj)
 {   
     std::string result;
@@ -86,10 +88,7 @@ std::string Bigint::addition_loop(int i, int j, Bigint const& obj)
         carry = sum / 10;
         result.push_back((sum % 10) + '0');
     }
-        std::reverse(result.begin(), result.end());
-        result = (negative ? "-" : "") + result;
-        return result;
-
+    std::reverse(result.begin(), result.end());
     return result;
 }
 
