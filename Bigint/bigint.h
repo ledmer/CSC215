@@ -17,6 +17,7 @@ class Bigint
     Bigint operator+(Bigint const& obj);
     string addition_loop(int i , int j, Bigint const& obj);
     string  substraction_loop(int i, int j, Bigint const& obj);
+    bool operator<(const Bigint& other) const;
 
 
 };

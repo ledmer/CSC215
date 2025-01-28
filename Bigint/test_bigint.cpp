@@ -28,3 +28,13 @@ TEST_CASE("Testing Bigint int definition") {
     CHECK(a.to_string() == "12345");
 }
 
+TEST_CASE("Testing Bigint addition of negatives") {
+    Bigint a("12345678901234567890");
+    Bigint b("-98765432109876543210");
+
+
+    Bigint result1 = a + b;
+    CHECK(result1.to_string() == "-86419753200000000000");
+
+}
+

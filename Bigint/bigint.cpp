@@ -39,22 +39,41 @@ Bigint Bigint::operator+(Bigint const& obj)
     return Bigint(result);
   
 }
-std::string  Bigint::substraction_loop(int i, int j, Bigint const& obj)
+std::string Bigint::substraction_loop(int i, int j, Bigint const& obj)
 {
     std::string result;
     int carry = 0;
-    if (negative == obj.negative) {
-        while (i >= 0 || j >= 0 || carry) {
-            int digit1 = (i >= 0) ? digits[i--] - '0' : 0;
-            int digit2 = (j >= 0) ? obj.digits[j--] - '0' : 0;
-            int sum = digit1 + digit2 + carry;
-            carry = sum / 10;
-            result.push_back((sum % 10) + '0');
+    bool is_negative = false;
+
+    // Determine if the result will be negative
+    if (*this < obj) {
+        is_negative = true;
+        std::swap(i, j);
+    }
+
+    while (i >= 0 || j >= 0 || carry) {
+        int digit1 = (i >= 0) ? digits[i--] - '0' : 0;
+        int digit2 = (j >= 0) ? obj.digits[j--] - '0' : 0;
+        int sum = digit1 - digit2 + carry;
+        if (sum < 0) {
+            carry = -1;
+            sum += 10;
+        } else {
+            carry = 0;
         }
-            std::reverse(result.begin(), result.end());
-            result = (negative ? "-" : "") + result;
-            return result;
-        }
+        result.push_back(sum + '0');
+    }
+
+    // Remove leading zeros
+    while (result.size() > 1 && result.back() == '0') {
+        result.pop_back();
+    }
+
+    std::reverse(result.begin(), result.end());
+    if (is_negative) {
+        result = "-" + result;
+    }
+    return result;
 }
 std::string Bigint::addition_loop(int i, int j, Bigint const& obj)
 {   
@@ -72,4 +91,21 @@ std::string Bigint::addition_loop(int i, int j, Bigint const& obj)
         return result;
 
     return result;
+}
+
+bool Bigint::operator<(const Bigint& other) const {
+    // Compare lengths first
+    if (digits.size() != other.digits.size()) {
+        return digits.size() < other.digits.size();
+    }
+
+    // Compare digit by digit
+    for (size_t i = 0; i < digits.size(); ++i) {
+        if (digits[i] != other.digits[i]) {
+            return digits[i] < other.digits[i];
+        }
+    }
+
+    // They are equal
+    return false;
 }
